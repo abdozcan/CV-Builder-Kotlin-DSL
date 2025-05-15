@@ -1,0 +1,84 @@
+# CV Builder - Kotlin DSL Project
+
+This is a Kotlin-based project that allows you to create a customizable CV using a domain-specific language (DSL). It enables you to build a CV in a clean, structured way by using various components like personal information, education, skills, experience, projects, and languages. The final CV can be generated in Markdown format.
+
+### About This Project
+I started this project as a small Kotlin DSL experiment to play around with the flexibility of Kotlin and its powerful features. Initially, I wanted to create a very simple DSL for my GitHub profile, but I ended up building a more structured and complex DSL for generating CVs. It’s a fun project to showcase how Kotlin can be used to make code more intuitive and declarative.
+
+### Example Usage
+
+Here’s how you can use the DSL to create a CV object:
+
+```kotlin
+print {
+    markdown {
+        cv {
+            header {
+                name = "John Doe"
+                title = "Software Engineer"
+                email = "johndoe@example.com"
+
+                location(country = "USA") {
+                    city = "Alaska"
+                    address = "4211 Spenard Rd"
+                }
+
+                phone { "+123 456 7890" }
+
+                links {
+                    github { "johndoe" }
+                    linkedin { "en/johndoe" }
+                    link { "johndoe.com" }
+                }
+            }
+
+            summary { "A passionate software engineer with experience in building scalable applications." }
+
+            experiences {
+                "I" {
+                    Worked `as` "Software Engineer" from 2018.Jan to 2020.Dec `in` "USA" at "TechCorp"
+                    doing = "Developed and maintained web applications"
+                }
+                "I am" {
+                    Working `as` "Senior Software Engineer" since "2021.Jan" `in` "USA" at "InnovateX"
+                    doing = "Leading a team of engineers to build innovative software solutions"
+                }
+            }
+
+            education {
+                school(name = "MIT") {
+                    major = "Computer Science"
+                    degree = "Bachelor"
+                    years = "2014 - 2018"
+                    gpa = 3.9 from 4.0
+                }
+            }
+
+            projects {
+                project(name = "ProjectX") {
+                    description = "A project management tool built using Kotlin and Spring Boot."
+                    link = "https://github.com/johndoe/projectx"
+                }
+                project(name = "ProjectY") {
+                    description = "A project management tool built using Kotlin and Spring Boot."
+                    link = "https://github.com/johndoe/projecty"
+                }
+            }
+
+            skills {
+                "Programming Languages" {
+                    listOf("Kotlin", "Java", "Python", "C")
+                }
+                "Tools & Frameworks" {
+                    listOf("Android SDK", "Spring Boot", "Git", "IntelliJ IDEA")
+                }
+            }
+
+            languages {
+                language { "English" } `is native?` Yes
+                language { "Arabic" }
+            }
+        }
+    }
+}
+```
