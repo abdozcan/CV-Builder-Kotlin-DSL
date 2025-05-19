@@ -15,8 +15,8 @@ print {
         cv {
             header {
                 name = "John Doe"
-                title = "Software Engineer"
-                email = "johndoe@example.com"
+                title = "Senior Software Engineer"
+                email = "johndoe@johndoe.com"
 
                 location(country = "USA") {
                     city = "Alaska"
@@ -35,13 +35,13 @@ print {
             summary { "A passionate software engineer with experience in building scalable applications." }
 
             experiences {
+                "I am" {
+                    Working `as` "Senior Software Engineer" since 2021.Apr `in` "USA" at "InnovateX"
+                    doing = "Leading a team of engineers to build innovative software solutions"
+                }
                 "I" {
                     Worked `as` "Software Engineer" from 2018.Jan to 2020.Dec `in` "USA" at "TechCorp"
                     doing = "Developed and maintained web applications"
-                }
-                "I am" {
-                    Working `as` "Senior Software Engineer" since "2021.Jan" `in` "USA" at "InnovateX"
-                    doing = "Leading a team of engineers to build innovative software solutions"
                 }
             }
 
@@ -60,7 +60,6 @@ print {
                     link = "https://github.com/johndoe/projectx"
                 }
                 project(name = "ProjectY") {
-                    description = "A project management tool built using Kotlin and Spring Boot."
                     link = "https://github.com/johndoe/projecty"
                 }
             }
@@ -76,7 +75,7 @@ print {
 
             languages {
                 language { "English" } `is native?` Yes
-                language { "Arabic" }
+                language { "Spanish" }
             }
         }
     }
